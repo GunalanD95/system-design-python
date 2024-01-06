@@ -123,3 +123,62 @@ class DosaDirector:
 gobi_dosa_builder = GobiDosaBuilder()   
 dosa_diretor = DosaDirector()    
 dosa = dosa_diretor.construct_dosa(gobi_dosa_builder)
+
+
+########################################################################################################################
+
+
+# Product: Pizza
+class Pizza:
+    def __init__(self, crust, sauce, cheese, toppings):
+        self.crust = crust
+        self.sauce = sauce
+        self.cheese = cheese
+        self.toppings = toppings
+
+    def __str__(self):
+        return f"Crust: {self.crust}, Sauce: {self.sauce}, Cheese: {self.cheese}, Toppings: {', '.join(self.toppings)}"
+
+# Abstract Builder: PizzaBuilder
+class PizzaBuilder(ABC):
+    def __init__(self):
+        self.pizza = None
+
+    @abstractmethod
+    def build_pizza(self):
+        pass
+
+    def get_pizza(self):
+        return self.pizza
+
+# Concrete Builder: VeggiePizzaBuilder
+class VeggiePizzaBuilder(PizzaBuilder):
+    def build_pizza(self):
+        self.pizza = Pizza("Thin crust", "Tomato sauce", "Mozzarella cheese", ["Mushrooms", "Bell peppers", "Olives"])
+
+# Concrete Builder: MeatLoversPizzaBuilder
+class MeatLoversPizzaBuilder(PizzaBuilder):
+    def build_pizza(self):
+        self.pizza = Pizza("Thick crust", "BBQ sauce", "Cheddar cheese", ["Pepperoni", "Sausage", "Bacon"])
+
+# Director: PizzaDirector
+class PizzaDirector:
+    def construct_pizza(self, pizza_builder):
+        pizza_builder.build_pizza()
+
+# Client code
+director = PizzaDirector()
+
+veggie_builder = VeggiePizzaBuilder()
+director.construct_pizza(veggie_builder)
+veggie_pizza = veggie_builder.get_pizza()
+
+meat_builder = MeatLoversPizzaBuilder()
+director.construct_pizza(meat_builder)
+meat_lovers_pizza = meat_builder.get_pizza()
+
+print("Veggie Pizza:")
+print(veggie_pizza)
+
+print("\nMeat Lovers Pizza:")
+print(meat_lovers_pizza)
