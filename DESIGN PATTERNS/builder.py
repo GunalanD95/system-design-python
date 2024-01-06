@@ -7,7 +7,7 @@ Builder Class : HouseBuilder (creation of the builder object)
  - it will have setter methods and attributes of the class
  - also have build() to build the house object -> House Constructor()
 '''
-
+from abc import ABC ,abstractclassmethod , abstractmethod
 
 class House:
     def __init__(self , builder) -> None:
@@ -73,4 +73,53 @@ bhk  = dire.build()
 print(bhk) 
        
 
+########################################################################################################################
+# Dosa-Builder 
+# Product : Dosa
+class Dosa:
+    def __init__(self,dosa_type,size,ghee_needed=False):
+        self.dosa_type   = dosa_type
+        self.ghee_needed = ghee_needed
+        self.size        = size
 
+    def __str__(self):
+        return f"{self.dosa_type} | {self.ghee_needed} | {self.size}"
+
+#Abstract Dosa Builder    
+class DosaBuilder:
+    def __init__(self):
+        self.dosa = None
+
+    @abstractmethod
+    def build_dosa(self):
+        pass
+    
+    @abstractmethod
+    def get_dosa(self):
+        return self.dosa
+    
+# Concrete Builder: Gobi Dosa
+class GobiDosaBuilder(DosaBuilder):
+    def build_dosa(self):
+        self.dosa = Dosa('Gobi-Dosa','Medium',True)
+        return self
+# Concrete Builder: Masal Dosa
+class MasalDosaBuilder(DosaBuilder):
+    def build_dosa(self):
+        self.dosa = Dosa('Masal-Dosa','Medium',True)
+        return self
+# Concrete Builder: Oninon Dosa
+class OninonDosaBuilder(DosaBuilder):
+    def build_dosa(self):
+        self.dosa =  Dosa('Onion-Dosa','Medium',True)
+        return self
+        
+# Director: DosaDirector
+class DosaDirector:
+    def construct_dosa(self, dosa_builder):
+        return dosa_builder.build_dosa().get_dosa()
+    
+
+gobi_dosa_builder = GobiDosaBuilder()   
+dosa_diretor = DosaDirector()    
+dosa = dosa_diretor.construct_dosa(gobi_dosa_builder)

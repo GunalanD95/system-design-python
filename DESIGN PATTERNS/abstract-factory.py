@@ -1,0 +1,13 @@
+'''
+ABSTRACT FACTORY DESIGN PATTERN:
+  - USED TO CREATE FAMILIES OF RELATED OBJECTS
+  - OBJECTS WHICH WE ARE CREATING ARE COMPATABILE WITH EACH OTHER  AND HAVE SOME THING
+'''
+
+
+'''
+
+REF : https://refactoring.guru/design-patterns/abstract-factory/python/example
+
+'''
+
