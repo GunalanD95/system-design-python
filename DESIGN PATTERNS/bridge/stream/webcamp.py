@@ -1,0 +1,2 @@
+def webcam():
+    return "###WEBCAMDATA###"
