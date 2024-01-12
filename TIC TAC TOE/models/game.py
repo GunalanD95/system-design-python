@@ -21,8 +21,10 @@ class Game:
             print("Game has Ended")
             print(f"Winner is {self.winner}") 
         else:
-            print("Game is Draw")
-    
+            print("Game has Ended in Draw")
+        
+        print('******')
+        self.printboard()
         
     def printboard(self):
         self.board.print_board()
@@ -35,9 +37,7 @@ class Game:
         
         if row < 0 and col < 0 and row  >= self.board.dimension and col  >= self.board.dimension:
             return False 
-        
-        print(self.board.board)
-        
+                
         cell = self.board.board[row][col]
         return True if cell.cell_state == CellState.FREE else False
     
@@ -75,7 +75,7 @@ class Game:
     
     def check_draw(self):
         dimension = self.board.dimension
-        if self.moves  == dimension * dimension:
+        if len(self.moves)  >= dimension * dimension:
             self.game_status = GameStatus.DRAW
             return True 
         return False 
@@ -107,6 +107,7 @@ class Game:
             return 
         
         if self.check_draw():
+            self.game_status = GameStatus.DRAW
             return
 
         self.currentMovePlayerIndex += 1

@@ -13,5 +13,6 @@ class Board:
             for cell in row:
                 print(' | ' + cell.symbol + ' | ', end=' ')
             print('')
+            print('-' * (len(row) * 6 + 1))
 
         

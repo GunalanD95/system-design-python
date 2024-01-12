@@ -1,5 +1,5 @@
 from controllers.gamecontroller import GameController
-from models.player import Player , HumanPlayer
+from models.player import HumanPlayer
 from models.bot import BotPlayer
 from strategies.winningstrategy import RowWinningStrategy , ColWinningStrategy , DiagonalWinningStrategy
 from models.gamestatus import GameStatus
@@ -14,13 +14,14 @@ def main():
     
     players = [
         HumanPlayer('Gunalan','X'),
-        # HumanPlayer('Guhan'  ,'O'),
-        BotPlayer('O',Botdifficulty.EASY),
+        HumanPlayer('Guhan'  ,'O'),
+        BotPlayer('K',Botdifficulty.EASY),
     ]
     
     winning_strategies = [
         RowWinningStrategy(dimension,players),
-        ColWinningStrategy(dimension,players)
+        ColWinningStrategy(dimension,players),
+        DiagonalWinningStrategy(players)
     ]
     
     game = game_controller.create_game(dimension,players,winning_strategies)
@@ -28,9 +29,13 @@ def main():
     print(f'......Created Game : {game.__dict__}........')
 
     print("-------------- Game is starting --------------")
+    print(' ')
     
     while game.game_status == GameStatus.IN_PROGRESS:
+        print(' ')
+        
         print("This is how board looks like:")
+        
         game_controller.displayBoard(game)
 
         print(' ')
@@ -42,6 +47,8 @@ def main():
             game_controller.undo(game)
         else:
             game_controller.makeMove(game)
+            
+        print(' ')
     
     game_controller.printResult(game)
     
