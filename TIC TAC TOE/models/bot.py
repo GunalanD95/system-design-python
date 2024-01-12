@@ -15,7 +15,7 @@ class BotPlayer(Player):
     
     
     def makeMove(self,board):
-        return self.bot_playing_stgy.makeMove(board)
+        return self.bot_playing_stgy.makeMove(board.board)
     
     def __str__(self) -> str:
-        return f"Player : Bot | {self.symbol}"
+        return f"Player : < Bot | {self.symbol} >"

@@ -26,7 +26,7 @@ class HumanPlayer(Player):
         return Cell(row_num, col_num)
         
     def __str__(self) -> str:
-        return f"Player : {self.name} | {self.symbol}"
+        return f"< Player : {self.name} | {self.symbol} >"
         
         
         

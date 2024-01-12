@@ -14,8 +14,8 @@ def main():
     
     players = [
         HumanPlayer('Gunalan','X'),
-        HumanPlayer('Guhan'  ,'O'),
-        # BotPlayer('O',Botdifficulty.EASY)
+        # HumanPlayer('Guhan'  ,'O'),
+        BotPlayer('O',Botdifficulty.EASY),
     ]
     
     winning_strategies = [
