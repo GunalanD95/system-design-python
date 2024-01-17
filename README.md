@@ -19,11 +19,11 @@ This repository serves as a comprehensive resource for learning and implementing
 
 ## Design Patterns
 
-- [Strategy Design Pattern](./DESIGN%20PATTERNS)
+- [Design Patterns](./DESIGN%20PATTERNS)
 
 ## SOLID Principles
 
-- [SOLID Principles Implementation](./SOLID%20PRINCIPLES)
+- [SOLID Principles Overview](./SOLID%20PRINCIPLES)
 
 ## Getting Started
 
