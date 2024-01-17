@@ -61,7 +61,7 @@ class Game:
         self.moves.pop()
 
         # unmarking the current player index 
-        self.currentMovePlayerIndex = 1
+        self.currentMovePlayerIndex -= 1
         self.currentMovePlayerIndex += len(self.players)
         self.currentMovePlayerIndex %= len(self.players)
        
@@ -92,6 +92,8 @@ class Game:
             print("Invalid move. Retry.")
             return 
 
+        print(' ')
+        
         print(f"Current Player {current_player} is made new move at row: {row} and col: {col}")
      
         cell_in_board = self.board.board[row][col]
