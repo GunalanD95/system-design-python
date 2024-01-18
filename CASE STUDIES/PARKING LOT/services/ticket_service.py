@@ -1,11 +1,5 @@
 from models.ticket import Ticket
 from models.vehicle import Vehicle , VehicleType
-from repo.gate_repo import GateRepository
-from repo.vehicle_repo import VehicleRepository
-from repo.ticket_repo import TicketRepository
-from repo.parking_lot_repo import ParkingLotRepository
-
-from strategies.spot_assign_strategy import RandomSpotAssignmentStrategy
 from datetime import datetime
 
 class GateNotFoundException(Exception):
@@ -55,6 +49,8 @@ class TicketService:
             new_vehicle = Vehicle()
             new_vehicle.vehicle_num = vehicle_number
             new_vehicle.vehicle_type = vehicle_type
+            
+            self.vehicle_repo.save(new_vehicle)
             vehicle = new_vehicle
             
             

@@ -4,9 +4,6 @@ sys.path.insert(0, 'C:\\Users\\admin\\Desktop\\system-design-python\\CASE STUDIE
 from dtos.ticket_dto import TicketRequestDTO , TicketResponseDTO
 from dtos.response_status_dto import ResponseStatusDTO
 
-
-from services.ticket_service import TicketService
-
 class TicketController:
     
     def __init__(self , ticket_service):
@@ -45,6 +42,6 @@ class TicketController:
         # generate response using DTO 
         response = TicketResponseDTO(ticket.ticket_num,ticket.operator.id,ticket.parking_spot.id,ResponseStatusDTO.SUCCESS)
         
-        return response  # Placeholder, replace with the actual TicketResponseDTO
+        return response 
     
 

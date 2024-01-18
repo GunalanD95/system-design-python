@@ -1,6 +1,5 @@
 from pydantic import BaseModel
 from models.vehicle import VehicleType
-from datetime import datetime
 from .response_status_dto import ResponseStatusDTO
 
 class TicketRequestDTO(BaseModel):

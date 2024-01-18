@@ -1,5 +1,4 @@
-from models.parking_gate import ParkingGate , GateStatus
-from models.operator import Operator
+from models.parking_gate import ParkingGate 
 '''
 CRUD Operations belonging to Gate Repo 
 '''
