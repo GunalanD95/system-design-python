@@ -17,6 +17,7 @@ This repository serves as a comprehensive resource for learning and implementing
 - [Parking Lot](./CASE%20STUDIES/PARKING%20LOT)
 - [Tic Tac Toe](./CASE%20STUDIES/TIC%20TAC%20TOE)
 - [BookMyShow](https://github.com/GunalanD95/bookmyshow)
+- [SplitWise](https://github.com/GunalanD95/SplitWise)
 
 ## Design Patterns
 
