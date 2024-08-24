@@ -18,6 +18,7 @@ This repository serves as a comprehensive resource for learning and implementing
 - [Tic Tac Toe](./CASE%20STUDIES/TIC%20TAC%20TOE)
 - [BookMyShow](https://github.com/GunalanD95/bookmyshow)
 - [SplitWise](https://github.com/GunalanD95/SplitWise)
+- [Amazon Locker Hub](./CASE%20STUDIES/AMAZON%20LOCKER%20HUB)
 
 ## Design Patterns
 
