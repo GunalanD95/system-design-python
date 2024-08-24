@@ -8,7 +8,7 @@ class CustomerService():
         
         
     def create_customer(self,customer: Customer) -> Customer:
-        customer.customer_id = len(self._customers)
+        customer.customer_id = len(self._customers) + 1
         customer.customer_status = CustomerStatus.ACTIVE
         self._customers.append(customer)
         return customer

@@ -58,3 +58,4 @@ class Notification:
         self.target_type : NotificationTargetType  = None
 
 
+
