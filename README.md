@@ -19,6 +19,8 @@ This repository serves as a comprehensive resource for learning and implementing
 - [BookMyShow](https://github.com/GunalanD95/bookmyshow)
 - [SplitWise](https://github.com/GunalanD95/SplitWise)
 - [Amazon Locker Hub](./CASE%20STUDIES/AMAZON%20LOCKER%20HUB)
+- [Black Jack](./CASE%20STUDIES/BLACKJACK)
+- [Vending Machine](./CASE%20STUDIES/VENDING%20MACHINE)
 
 ## Design Patterns
 
